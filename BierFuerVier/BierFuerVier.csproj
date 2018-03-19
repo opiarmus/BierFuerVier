@@ -97,7 +97,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\HomeController.cs" />
+=======
+    <Compile Include="Controllers\UserController.cs" />
+>>>>>>> a5ae19e7c57e5ea4c719171c7351f5c0a73b8e2b
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -119,7 +123,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+<<<<<<< HEAD
     <Folder Include="Models\" />
+=======
+    <Folder Include="Views\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803190938125_Initial.resx">
+      <DependentUpon>201803190938125_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> a5ae19e7c57e5ea4c719171c7351f5c0a73b8e2b
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -132,7 +145,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52632</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
