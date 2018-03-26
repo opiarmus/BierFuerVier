@@ -21,5 +21,10 @@ namespace BierFuerVier.Controllers
             IEnumerable<Beer> model = db.Beer.AsEnumerable();
             return View(model);
         }
+
+        public ActionResult Sample()
+        {
+            return View();
+        }
     }
 }

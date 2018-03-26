@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="iso-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Content/Site.css" type="text/css">
+    <meta charset="iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Content/Site.css" type="text/css" />
     <title>@ViewBag.Title - BierFürVier</title>
 </head>
 <body>	
@@ -12,14 +12,14 @@
 	  <header id="header" class="clear">
 		<div id="hgroup">
 		  <h1><a href="#">BierFürVier</a></h1>
-		  <h2>Eine komplette Bierliste für Bierliebhaber</h2>
+		  <h2>Eine Bierliste für Bierliebhaber</h2>
 		</div>
 		<nav>
 		  <ul>
 			<li>@Html.ActionLink("Startseite", "Index", "Home")</li>
 			<li>@Html.ActionLink("Info", "About", "Home")</li>
 			<li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
-			<li class="last"><a href="#">Text Link</a></li>
+            <li class="last">@Html.ActionLink("Sample Page", "Sample", "Home")</li>
 		  </ul>
 		</nav>
 	  </header>
