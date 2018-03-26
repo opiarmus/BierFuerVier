@@ -530,3 +530,9 @@ input, textarea, select
         margin: 0;
         padding: 0;
     }
+
+
+/*----------------------------------------------Custom-------------------------------------*/
+
+.formElement{margin:20px 0;}
+.errorMessage{color:red;}

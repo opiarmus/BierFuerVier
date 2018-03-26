@@ -5,13 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Login</h2>
+<div id="container" class="clear">
+    <h2>Login</h2>
 
-<form action="/User/Login" method="post">
-    @Html.LabelFor(u => u.Email)
-    @Html.TextBoxFor(u => u.Email)
-    @Html.LabelFor(u => u.Password)
-    @Html.PasswordFor(u => u.Password)
-    <input type="submit" value="Login"/>
-    <p class="ErrorMessage">@ViewBag.ErrorMessage</p>
-</form>
+    <form action="/User/Login" method="post">
+        <div class="formElement">
+            @Html.TextBoxFor(u => u.Email, new { placeholder = "Email" })
+        </div>
+        <div class="formElement">
+            @Html.PasswordFor(u => u.Password, new { placeholder = "Password" })
+        </div>
+        <p class="errorMessage">@ViewBag.ErrorMessage</p>
+        <input type="submit" value="Login" />
+    </form>
+</div>
