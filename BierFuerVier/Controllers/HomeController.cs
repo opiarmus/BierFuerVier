@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BierFuerVier.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,17 @@ namespace BierFuerVier.Controllers
 {
     public class HomeController : Controller
     {
+        private DbAccess db;
+
+        public HomeController()
+        {
+            db = new DbAccess();
+        }
+
         public ActionResult Index()
         {
-            return View();
+            IEnumerable<Beer> model = db.Beer.AsEnumerable();
+            return View(model);
         }
     }
 }
