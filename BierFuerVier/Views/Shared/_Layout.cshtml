@@ -2,37 +2,37 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
+    <meta charset="iso-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
+    <link rel="stylesheet" href="Content/Site.css" type="text/css">
     <title>@ViewBag.Title - BierFürVier</title>
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Anwendungsname", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Info", "About", "Home")</li>
-                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - BierFürVier</p>
-        </footer>
-    </div>    
+<body>	
+	<div class="wrapper row1">
+	  <header id="header" class="clear">
+		<div id="hgroup">
+		  <h1><a href="#">BierFürVier</a></h1>
+		  <h2>Eine komplette Bierliste für Bierliebhaber</h2>
+		</div>
+		<nav>
+		  <ul>
+			<li>@Html.ActionLink("Startseite", "Index", "Home")</li>
+			<li>@Html.ActionLink("Info", "About", "Home")</li>
+			<li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+			<li class="last"><a href="#">Text Link</a></li>
+		  </ul>
+		</nav>
+	  </header>
+	</div>
+	<!-- content -->
+	<div class="wrapper row2">
+		@RenderBody()
+	</div>
+	<!-- Footer -->
+	<div class="wrapper row3">
+	  <footer id="footer" class="clear">
+		<p class="fl_left">Copyright &copy; @DateTime.Now.Year - All Rights Reserved - <a href="#">BierFürVier</a></p>
+	  </footer>
+	</div>	
 </body>
 </html>
