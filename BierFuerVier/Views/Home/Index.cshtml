@@ -4,26 +4,26 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="row">
+<div id="container" class="clear">
 
     <h1>Welcome to the World of Beer</h1>
 
     <p>Bierliste here...</p>
     <table>
-    <tr>
-    <th>Name</th>
-    <th>Beschreibung</th>
-    <th>Bild</th>
-    </tr>
-
-    @foreach (var bier in Model)
-    {
         <tr>
-        <td>@bier.Name</td>
-        <td>@bier.Description</td>
-        <td>@bier.Image</td>
+            <th>Name</th>
+            <th>Beschreibung</th>
+            <th>Bild</th>
         </tr>
-    }
+
+        @foreach (var bier in Model)
+        {
+            <tr>
+                <td>@bier.Name</td>
+                <td>@bier.Description</td>
+                <td>@bier.Image</td>
+            </tr>
+        }
     </table>
 
 </div>
