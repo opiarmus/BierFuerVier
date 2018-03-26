@@ -1,0 +1,17 @@
+﻿@model BierFuerVier.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+<form action="/User/Login" method="post">
+    @Html.LabelFor(u => u.Email)
+    @Html.TextBoxFor(u => u.Email)
+    @Html.LabelFor(u => u.Password)
+    @Html.PasswordFor(u => u.Password)
+    <input type="submit" value="Login"/>
+    <p class="ErrorMessage">@ViewBag.ErrorMessage</p>
+</form>

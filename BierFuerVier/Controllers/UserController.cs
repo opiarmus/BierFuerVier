@@ -39,6 +39,7 @@ namespace BierFuerVier.Controllers
             }
             else
             {
+                ViewBag.ErrorMessage = "Benutzername oder Passwort fehlerhaft";
                 return View(user);
             }
         }
