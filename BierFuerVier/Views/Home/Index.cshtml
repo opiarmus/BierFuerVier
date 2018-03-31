@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<BierFuerVier.Models.Beer>
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Bierabetiker";
 }
 
 <div id="container" class="clear">
 
-    <h1>Welcome to the World of Beer</h1>
+    <h1>Willkommen in der wunderbaren Welt der Biere</h1>
+	<p>Hier finden bierliebe Menschen Informationen zum gesunden Hopfentee</p>
 
-    <p>Bierliste here...</p>
     <table>
         <tr>
             <th>Name</th>
             <th>Beschreibung</th>
-            <th>Bild</th>
+			<th>Bild</th>
         </tr>
 
         @foreach (var bier in Model)
@@ -21,7 +21,13 @@
             <tr>
                 <td>@bier.Name</td>
                 <td>@bier.Description</td>
-                <td>@bier.Image</td>
+				<td>
+					@{
+						var base64 = Convert.ToBase64String(bier.Image);
+						var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+					}
+					<img src="@imgSrc" />
+				</td>
             </tr>
         }
     </table>
