@@ -101,6 +101,9 @@
     <Content Include="Content\images\demo\80x80.gif" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Migrations\braugold.png" />
+    <Content Include="Migrations\lager.png" />
+    <Content Include="Migrations\retro.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,8 @@ namespace BierFuerVier.Migrations
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Drawing;
+    using System.IO;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<BierFuerVier.Models.DbAccess>
@@ -26,6 +28,20 @@ namespace BierFuerVier.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            context.Beer.AddOrUpdate(x => x.Id,
+                new Beer() { Id = 1, Name = "Eichhof Lager", Image = ImageToByte(@"V:\dev\M326\BierFuerVier\BierFuerVier\Migrations\lager.png"), Description = "Sein feines Malzaroma und seine Milde machen unser Lager zum Klassiker. Es ist goldgelb und fein im Geschmack." },
+                new Beer() { Id = 2, Name = "Eichhof Retro", Image = ImageToByte(@"V:\dev\M326\BierFuerVier\BierFuerVier\Migrations\retro.png"), Description = "Ein Bier von damals, unkompliziert und authentisch vom Geschmack bis hin zur Verpackung. Eine Hefe aus den 70er Jahren bringt den unbekümmerten Geschmack des Lagers zurück: Einfach, bodenständig, süffig. Kurz: Der Geschmack der guten alten Zeiten." },
+                new Beer() { Id = 3, Name = "Eichhof Braugold", Image = ImageToByte(@"V:\dev\M326\BierFuerVier\BierFuerVier\Migrations\braugold.png"), Description = "Das aufwendige Brauverfahren gibt unserem Braugold seinen angenehm herben Charakter und ein rundes Aroma. Braugold ist unser Premiumbier für Freunde der herben Linie." }
+                );
+        }
+
+        private byte[] ImageToByte(string path)
+        {
+            MemoryStream ms = new MemoryStream();
+            Image image = Image.FromFile(path);
+            image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return ms.ToArray();
         }
     }
 }
