@@ -30,9 +30,9 @@ namespace BierFuerVier.Migrations
             //  to avoid creating duplicate seed data.
 
             context.Beer.AddOrUpdate(x => x.Id,
-                new Beer() { Id = 1, Name = "Eichhof Lager", Image = ImageToByte(@"V:\dev\M326\BierFuerVier\BierFuerVier\Migrations\lager.png"), Description = "Sein feines Malzaroma und seine Milde machen unser Lager zum Klassiker. Es ist goldgelb und fein im Geschmack." },
-                new Beer() { Id = 2, Name = "Eichhof Retro", Image = ImageToByte(@"V:\dev\M326\BierFuerVier\BierFuerVier\Migrations\retro.png"), Description = "Ein Bier von damals, unkompliziert und authentisch vom Geschmack bis hin zur Verpackung. Eine Hefe aus den 70er Jahren bringt den unbekümmerten Geschmack des Lagers zurück: Einfach, bodenständig, süffig. Kurz: Der Geschmack der guten alten Zeiten." },
-                new Beer() { Id = 3, Name = "Eichhof Braugold", Image = ImageToByte(@"V:\dev\M326\BierFuerVier\BierFuerVier\Migrations\braugold.png"), Description = "Das aufwendige Brauverfahren gibt unserem Braugold seinen angenehm herben Charakter und ein rundes Aroma. Braugold ist unser Premiumbier für Freunde der herben Linie." }
+                new Beer() { Id = 1, Name = "Eichhof Lager", Image = ImageToByte(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../Migrations/lager.png")), Description = "Sein feines Malzaroma und seine Milde machen unser Lager zum Klassiker. Es ist goldgelb und fein im Geschmack." },
+                new Beer() { Id = 2, Name = "Eichhof Retro", Image = ImageToByte(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../Migrations/retro.png")), Description = "Ein Bier von damals, unkompliziert und authentisch vom Geschmack bis hin zur Verpackung. Eine Hefe aus den 70er Jahren bringt den unbekümmerten Geschmack des Lagers zurück: Einfach, bodenständig, süffig. Kurz: Der Geschmack der guten alten Zeiten." },
+                new Beer() { Id = 3, Name = "Eichhof Braugold", Image = ImageToByte(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../Migrations/braugold.png")), Description = "Das aufwendige Brauverfahren gibt unserem Braugold seinen angenehm herben Charakter und ein rundes Aroma. Braugold ist unser Premiumbier für Freunde der herben Linie." }
                 );
         }
 
