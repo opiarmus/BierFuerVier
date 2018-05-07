@@ -44,6 +44,12 @@ namespace BierFuerVier.Controllers
             }
         }
 
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login");
+        }
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
