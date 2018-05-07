@@ -563,3 +563,13 @@ input[type=submit]:hover {
 
 .formElement{margin:20px 0;}
 .errorMessage{color:red;}
+.upvote{
+    color: green;
+}
+.downvote{
+    color: red;
+}
+.rating{
+    border: none;
+    font-weight: bold;
+}

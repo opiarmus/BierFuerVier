@@ -22,6 +22,9 @@
                 <figcaption>
                     <h2>@bier.Name</h2>
                     <p>@bier.Description</p>
+                    <button class="rating downvote" data-id="@bier.Id">-</button>
+                    <progress value="@bier.Upvotes" max="@bier.TotalVotes" data-id="@bier.Id"></progress>
+                    <button class="rating upvote" data-id="@bier.Id">+</button>
                 </figcaption>
             </figure>
         </section>

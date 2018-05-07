@@ -26,5 +26,43 @@ namespace BierFuerVier.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public JsonResult Upvote()
+        {
+            var id = Request.Form["id"];
+            int beerId;
+            if (Int32.TryParse(id, out beerId))
+            {
+                var beer = db.Beer.FirstOrDefault(b => b.Id == beerId);
+                if (beer != null)
+                {
+                    beer.Upvotes++;
+                    db.SaveChanges();
+                    return Json(true);
+                }
+            }
+            
+            return Json(false);
+        }
+
+        [HttpPost]
+        public JsonResult Downvote()
+        {
+            var id = Request.Form["id"];
+            int beerId;
+            if (Int32.TryParse(id, out beerId))
+            {
+                var beer = db.Beer.FirstOrDefault(b => b.Id == beerId);
+                if (beer != null)
+                {
+                    beer.Downvotes++;
+                    db.SaveChanges();
+                    return Json(true);
+                }
+            }
+
+            return Json(false);
+        }
     }
 }
