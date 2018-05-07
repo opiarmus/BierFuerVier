@@ -8,28 +8,24 @@
 
     <h1>Willkommen in der wunderbaren Welt der Biere</h1>
 	<p>Hier finden bierliebe Menschen Informationen zum gesunden Hopfentee</p>
+    <br /><br />
 
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Beschreibung</th>
-			<th>Bild</th>
-        </tr>
-
-        @foreach (var bier in Model)
-        {
-            <tr>
-                <td>@bier.Name</td>
-                <td>@bier.Description</td>
-				<td>
-					@{
-						var base64 = Convert.ToBase64String(bier.Image);
-						var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-					}
-					<img src="@imgSrc" />
-				</td>
-            </tr>
-        }
-    </table>
+    @foreach (var bier in Model)
+    {
+        <section id="slider" class="clear">
+            <figure>
+                @{ 
+                    var base64 = Convert.ToBase64String(bier.Image);
+                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                }
+                <img src="@imgSrc" alt="" width="100" />
+                <figcaption>
+                    <h2>@bier.Name</h2>
+                    <p>@bier.Description</p>
+                </figcaption>
+            </figure>
+        </section>
+    }
+        
 
 </div>
