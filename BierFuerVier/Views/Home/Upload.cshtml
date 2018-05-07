@@ -1,0 +1,27 @@
+﻿@model BierFuerVier.Models.Beer
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Das beste Bier fehlt noch...</h2>
+
+<div>
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            @Html.TextBoxFor(b => b.Name, new { placeholder = "Name" })
+        </div>
+        <div>
+            @Html.TextAreaFor(b => b.Description, new { placeholder = "Beschreibung" })
+        </div>
+        <div>
+            <input type="file" name="Bild" id="Bild" />
+        </div>
+        <div>
+            <input type="submit" value="Ab die Post" />
+        </div>
+    }
+
+</div>
+
