@@ -21,7 +21,7 @@ namespace BierFuerVier.Migrations
                 new User() { Id = 1, Email = "chef@bierfuervier.ch", Password = "1234" },
                 new User() { Id = 2, Email = "patrick@bierfuervier.ch", Password = "1234" },
                 new User() { Id = 3, Email = "luca@bierfuervier.ch", Password = "1234" },
-                new User() { Id = 3, Email = "lukas@bierfuervier.ch", Password = "1234" }
+                new User() { Id = 4, Email = "lukas@bierfuervier.ch", Password = "1234" }
                 );
 
             //  This method will be called after migrating to the latest version.

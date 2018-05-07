@@ -7,31 +7,38 @@
     <link rel="stylesheet" href="/Content/Site.css" type="text/css" />
     <title>@ViewBag.Title - BierFürVier</title>
 </head>
-<body>	
-	<div class="wrapper row1">
-	  <header id="header" class="clear">
-		<div id="hgroup">
-		  <h1><a href="#">BierFürVier</a></h1>
-		  <h2>Eine Bierliste für Bierliebhaber</h2>
-		</div>
-		<nav>
-            <ul>
-                <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
-                <li>@Html.ActionLink("Sample Page", "Sample", "Home")</li>
-                <li class="last">@Html.ActionLink("Login", "Login", "User")</li>
-            </ul>
-		</nav>
-	  </header>
-	</div>
-	<!-- content -->
-	<div class="wrapper row2">
-		@RenderBody()
-	</div>
-	<!-- Footer -->
-	<div class="wrapper row3">
-	  <footer id="footer" class="clear">
-		<p class="fl_left">Copyright &copy; @DateTime.Now.Year - All Rights Reserved - <a href="#">BierFürVier</a></p>
-	  </footer>
-	</div>	
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="clear">
+            <div id="hgroup">
+                <h1 id="homepageTitle">@Html.ActionLink("BierFürVier", "Index", "Home")</h1>
+                <h2>Eine Bierliste für Bierliebhaber</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sample Page", "Sample", "Home")</li>
+                    @if (Session["User"] != null)
+                    {
+                        <li class="last">@Html.ActionLink("Logout", "Logout", "User")</li>
+                    }
+                    else
+                    {
+                        <li class="last">@Html.ActionLink("Login", "Login", "User")</li>
+                    }
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <!-- content -->
+    <div class="wrapper row2">
+        @RenderBody()
+    </div>
+    <!-- Footer -->
+    <div class="wrapper row3">
+        <footer id="footer" class="clear">
+            <p class="fl_left">Copyright &copy; @DateTime.Now.Year - All Rights Reserved - <a href="#">BierFürVier</a></p>
+        </footer>
+    </div>
 </body>
 </html>
