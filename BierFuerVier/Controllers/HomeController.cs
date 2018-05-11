@@ -1,6 +1,7 @@
 ﻿using BierFuerVier.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -63,6 +64,28 @@ namespace BierFuerVier.Controllers
             }
 
             return Json(false);
+        }
+
+        [HttpGet]
+        public ActionResult Upload()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Upload(Beer beer)
+        {
+            HttpPostedFileBase file = Request.Files["Bild"];
+            if (file != null)
+            {
+                byte[] imageBytes = null;
+                BinaryReader reader = new BinaryReader(file.InputStream);
+                imageBytes = reader.ReadBytes((int)file.ContentLength);
+                beer.Image = imageBytes;
+            }
+            db.Beer.Add(beer);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

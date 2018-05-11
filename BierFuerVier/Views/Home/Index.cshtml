@@ -7,7 +7,7 @@
 <div id="container" class="clear">
 
     <h1>Willkommen in der wunderbaren Welt der Biere</h1>
-	<p>Hier finden bierliebe Menschen Informationen zum gesunden Hopfentee</p>
+    <p>Hier finden bierliebe Menschen Informationen zum gesunden Hopfentee</p>
     <br /><br />
 
     @foreach (var bier in Model)
@@ -29,6 +29,14 @@
             </figure>
         </section>
     }
-        
+
+    @if (Session["User"] != null)
+    {
+        <div>
+            <h2>Halt, das beste Bier fehlt ja noch!</h2>
+            @Html.ActionLink("Bier hinzufügen", "Upload", "Home")
+        </div>
+    }
+
 
 </div>
