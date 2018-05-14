@@ -9,8 +9,13 @@
                 request.open("POST", "/Home/Upvote");
                 request.onreadystatechange = function () {
                     if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
-                        var progress = document.querySelector("progress[data-id='" + id + "']");
-                        progress.max++;
+                        let progress = document.querySelector("progress[data-id='" + id + "']");
+                        if (progress.attributes["max"].value === "0") {
+                            progress.attributes["max"].value = "1";
+                        }
+                        else {
+                            progress.max++;
+                        }
                         progress.value++;
                     }
                 }
@@ -22,8 +27,13 @@
                 request.open("POST", "/Home/Downvote");
                 request.onreadystatechange = function () {
                     if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
-                        var progress = document.querySelector("progress[data-id='" + id + "']");
-                        progress.max++;
+                        let progress = document.querySelector("progress[data-id='" + id + "']");
+                        if (progress.attributes["max"].value === "0") {
+                            progress.attributes["max"].value = "1";
+                        }
+                        else {
+                            progress.max++;
+                        }
                     }
                 }
                 request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
