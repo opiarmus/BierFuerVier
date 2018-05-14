@@ -4,24 +4,29 @@
     ViewBag.Title = "Upload";
 }
 
-<h2>Das beste Bier fehlt noch...</h2>
+<div id="container" class="clear">
+    <h2>Das beste Bier fehlt noch...</h2>
 
-<div>
     @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <div>
+        <div class="formElement">
             @Html.TextBoxFor(b => b.Name, new { placeholder = "Name" })
         </div>
-        <div>
+
+        <div class="formElement">
             @Html.TextAreaFor(b => b.Description, new { placeholder = "Beschreibung" })
         </div>
+
         <div>
+            <label>Bild hochladen:</label><br />
             <input type="file" name="Bild" id="Bild" />
         </div>
+
+        <p class="errorMessage">@ViewBag.ErrorMessage</p>
+
         <div>
             <input type="submit" value="Ab die Post" />
         </div>
     }
-
 </div>
 

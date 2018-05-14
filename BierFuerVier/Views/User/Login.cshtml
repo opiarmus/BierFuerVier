@@ -9,13 +9,18 @@
     <h2>Login</h2>
 
     <form action="/User/Login" method="post">
+
         <div class="formElement">
             @Html.TextBoxFor(u => u.Email, new { placeholder = "Email" })
         </div>
+
         <div class="formElement">
             @Html.PasswordFor(u => u.Password, new { placeholder = "Password" })
         </div>
+
         <p class="errorMessage">@ViewBag.ErrorMessage</p>
+
         <input type="submit" value="Login" />
+
     </form>
 </div>
